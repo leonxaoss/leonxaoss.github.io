@@ -1,0 +1,36 @@
+
+// Variables
+$fonts_1_sb  : "Montserrat-SemiBold";
+$fonts_1_m  : "Montserrat-Medium";
+$fonts_1_mi  : "Montserrat-MediumItalic";
+$fonts_1_li  : "Montserrat-LightItalic";
+$fonts_1_eb  : "Montserrat-ExtraBold";
+$fonts_1_bl : "Montserrat-Black";
+$fonts_2_r  : "Circe-Regular";
+$fonts_2_b  : "Circe-Bold";
+$fonts_2_eb  : "Circe-ExtraBold";
+
+// Fonts Array
+$fonts:(
+        $fonts_1_sb,
+        $fonts_1_m,
+        $fonts_1_mi,
+        $fonts_1_li,
+        $fonts_1_bl,
+        $fonts_1_eb,
+        $fonts_2_r,
+        $fonts_2_b,
+        $fonts_2_eb
+);
+
+@each $font in $fonts {
+  @font-face{
+    font-family: '#{$font}';
+    src: local('#{$font}'),
+    url('../fonts/#{$font}.woff2') format('woff2'),
+    url('../fonts/#{$font}.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+}
+
