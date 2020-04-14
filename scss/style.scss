@@ -652,6 +652,7 @@ body{
 .base_row{
 	display: flex;
 	align-items: center;
+	justify-content: space-between;
 	padding: 7px;
 	background: #ffffff;
 	border-radius: 10px;
@@ -1433,6 +1434,131 @@ body{
 	padding: 5px 10px;
 	border-radius: 10px;
 	font-size: 14px;
+}
+
+
+.pop_up{
+	position: fixed;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 10;
+	transition: 0.2s all ease-in-out;
+	opacity: 0;
+	visibility: hidden;
+	background: rgba(#000, 0.2);
+	overflow-x: hidden;
+	overflow-y: auto;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	&.active{
+		opacity: 1;
+		visibility: visible;
+	}
+}
+
+
+.pop_box{
+	position: relative;
+	width: 500px;
+	padding: 50px 0 40px;
+	background: #ffffff;
+	transform: translateZ(0);
+	box-shadow: 0 0 32px 8px rgba(#0c0a3d, 0.04);
+	border-radius: 10px;
+}
+
+
+.close{
+	cursor: pointer;
+	position: absolute;
+	right: 10px;
+	top: 10px;
+	width: 16px;
+	height: 16px;
+	transition: 0.5s all ease;
+	.cls-1 {
+		fill: #7e7e7e;
+		fill-rule: evenodd;
+		opacity: 0.74;
+		isolation: isolate;
+	}
+	&:hover{
+		.cls-1{
+			fill: #7f63f4;
+		}
+	}
+}
+.list_block{
+	.title{
+		padding: 0 25px;
+	}
+}
+.list_tabs{
+	display: flex;
+	flex-wrap: wrap;
+	padding: 0 25px;
+}
+
+.list_tab{
+	background: transparent;
+	display: inline-block;
+	border: 1px solid #7f63f4;
+	border-radius: 100px;
+	padding: 12px 0;
+	width: 105px;
+	transition: 0.2s all ease-in-out;
+	text-align: center;
+	outline: none;
+	cursor: pointer;
+	color: #7f63f4;
+	margin-right: 10px;
+	margin-bottom: 10px;
+	&:nth-child(4n + 4){
+		margin-right: 0;
+	}
+	span{
+		font-family: $fonts_1_sb, sans-serif;
+		font-size: 12px;
+		display: block;
+	}
+	&.active{
+		background: #7f63f4;
+		color: #ffffff;
+	}
+	&:hover{
+		background: #a08ef7;
+		color: #ffffff;
+		border: 1px solid #a08ef7;
+	}
+}
+.series_block{
+	overflow-y: auto;
+	max-height: calc(100vh - 293px);
+}
+.series_box{
+	display: none;
+	&.active{
+		display: block;
+	}
+}
+.series_box__line{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 50px;
+	padding: 0 40px;
+	&:nth-child(even){
+		background: #f2effe;
+	}
+	&--right{
+		font-size: 12px;
+	}
+	&--right{
+		display: flex;
+	}
 }
 @media (-ms-high-contrast:active),(-ms-high-contrast:none) {
 

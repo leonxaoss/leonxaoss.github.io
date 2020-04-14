@@ -183,3 +183,58 @@ document.querySelectorAll('.base_label').forEach(function (item) {
 
     })
 });
+
+
+function tabs2(btnsSelector, tabsSelector, btnActive, contentActive){
+
+    const tabBtns = document.querySelectorAll(btnsSelector);
+    const tabCont = document.querySelectorAll(tabsSelector);
+
+    for (var i = 0; i < tabBtns.length; i++) {
+
+        // console.log(tabBtns[i])
+
+        tabBtns[i].addEventListener('click', function (e) {
+            e.preventDefault();
+
+            for (var i = 0; i < tabBtns.length; i++) {
+                tabBtns[i].classList.remove(btnActive)
+            }
+            this.classList.add(btnActive);
+            var btnAtr = +this.dataset.tab2;
+            for(var j = 0; j < tabCont.length; j++){
+                tabCont[j].classList.remove(contentActive);
+                var contAtr = +tabCont[j].dataset.content;
+                if(btnAtr === contAtr){
+                    tabCont[j].classList.add(contentActive);
+                }
+            }
+        })
+    }
+
+}
+
+tabs2('.list_tab', '.series_box', 'active', 'active');
+
+const $pop = document.querySelector('.pop_up');
+
+$pop.addEventListener('click', function (event) {
+    event.preventDefault();
+    const target = event.target;
+
+    if(target.closest('.close')){
+        this.classList.remove('active');
+    } else if(target.closest('.pop_box')){
+        event.stopPropagation();
+    } else {
+        this.classList.remove('active');
+    }
+});
+
+document.querySelectorAll('.base_episodes a').forEach(function (item) {
+    item.addEventListener('click', function (e) {
+        e.preventDefault();
+
+        $pop.classList.add('active');
+    })
+});
