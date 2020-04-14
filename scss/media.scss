@@ -45,9 +45,13 @@
     }
 }
 @media (max-width: 1750px) {
-    .base_title{
-        width: 18%;
+    //.base_title{
+    //    width: 18%;
+    //}
+    .base_l{
+        width: calc(18% + 60px);
     }
+
     .base_translate{
         width: 17%;
     }

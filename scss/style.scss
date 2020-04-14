@@ -758,11 +758,16 @@ body{
 	}
 }
 
+.base_l{
+	width: calc(23% + 60px);
+	display: flex;
+}
+
 .base_title{
 	padding-left: 15px;
 	color: #8091a5;
-	//flex-grow: 1;
-	width: 23%;
+	//flex-grow: 0.5;
+	//width: 23%;
 }
 
 .base_date{
