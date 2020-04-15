@@ -1428,7 +1428,9 @@ body{
 .add_order{
 	margin-top: 35px;
 }
-
+.copy_link{
+	cursor: pointer;
+}
 .copy_text{
 	position: fixed;
 	z-index: 3;

@@ -151,8 +151,9 @@ $('#two-inputs').dateRangePicker({
 }
 );
 
+// copy_link - клас який можна добавляти в будь який тег з текстом і текст з цього тегу бдуе скопійовано
 
-document.querySelectorAll('.base_label').forEach(function (item) {
+document.querySelectorAll('.copy_link').forEach(function (item) {
     item.addEventListener('click', function (e) {
         e.preventDefault();
 
